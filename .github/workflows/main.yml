@@ -72,6 +72,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }} 
         script: |
-          docker pull evshved/ive_done_it:latest
-          docker stop $(sudo docker ps -a -q)
-          docker run --rm -d -p 5000:5000 evshved/ive_done_it:latest
+          sudo docker pull evshved/ive_done_it
+          sudo docker stop $(sudo docker ps -a -q)
+          sudo docker run --rm -d -p 5000:5000 evshved/ive_done_it
